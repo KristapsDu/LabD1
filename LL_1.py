@@ -21,13 +21,17 @@ class LinkedList:
             self.tail = new_node
         return True
         
+    # ---------------------------------------------
+    def find_middle_node(self):
+        fast = self.head
+        slow = self.head
 
-    # WRITE FIND_MIDDLE_NODE METHOD HERE #
-    #                                    #
-    #                                    #
-    #                                    #
-    #                                    #
-    ######################################
+        while fast != None and fast.next != None:
+            slow = slow.next
+            fast = fast.next.next
+        
+        return slow
+    # ---------------------------------------------
 
 
 
@@ -36,6 +40,7 @@ my_linked_list.append(2)
 my_linked_list.append(3)
 my_linked_list.append(4)
 my_linked_list.append(5)
+my_linked_list.append(6)
 
-print( my_linked_list.find_middle_node().value )
+print(my_linked_list.find_middle_node().value)
 
